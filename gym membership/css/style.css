@@ -1,0 +1,230 @@
+:root {
+    --primary-color: #ff3e00; /* Energetic Orange */
+    --secondary-color: #1a1a1a; /* Dark Grey */
+    --accent-color: #ffffff;
+    --bg-color: #0f0f0f; /* Almost Black */
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --success: #00fa9a;
+    --danger: #ff0055;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Nav */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.main-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid transparent;
+    color: var(--text-muted);
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+}
+
+.nav-btn:hover, .nav-btn.active {
+    color: var(--accent-color);
+    border-color: var(--primary-color);
+    background: rgba(255, 62, 0, 0.1);
+}
+
+/* Content Area */
+.content-area {
+    flex: 1;
+    position: relative;
+    /* transition: opacity 0.3s ease; */
+}
+
+/* Generic Form Styles */
+.form-container, .table-container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-color);
+    border: 1px solid var(--secondary-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+input[readonly] {
+    background: #151515;
+    cursor: not-allowed;
+    color: var(--text-muted);
+}
+
+.btn-primary, .btn-secondary, .btn-danger {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e63900;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background: #333;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+th {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background: rgba(0, 250, 154, 0.1);
+    color: var(--success);
+}
+
+.status-expired {
+    background: rgba(255, 0, 85, 0.1);
+    color: var(--danger);
+}
+
+.action-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--secondary-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+    }
+}
